@@ -4,7 +4,6 @@ def get_num_words(text):
 
 def get_times_used(text):
     character_used = {}
-
     for c in text:
         if c in character_used:
             character_used[c] += 1
@@ -17,10 +16,7 @@ def sort_on(item):
 
 def sort_dict(this_dict):
     list_of_dicts = []
-    for k in this_dict.keys():
-        new_dict = {}
-        new_dict["char"] = k
-        new_dict["num"] = this_dict[k]
-        list_of_dicts.append(new_dict)
+    for k in this_dict:
+        list_of_dicts.append({"char": k, "num": this_dict[k]})
     list_of_dicts.sort(reverse=True, key=sort_on)
     return list_of_dicts
